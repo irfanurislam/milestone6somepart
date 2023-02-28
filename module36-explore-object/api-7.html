@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>api-7</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+     <style>
+        body{
+    text-align:center;
+}
+.github{
+    margin-top: 30px;
+}
+.user-cotnainer{
+    display: flex;
+    flex-wrap: wrap;
+}
+.card{
+    width: 300px;
+    height:300px;
+    padding: 10px;
+    box-shadow: 4px 4px  8px solid gray;
+    margin: 2px;
+}
+.card-img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+}
+.card-imgf{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+     </style>
+</head>
+<body>
+
+    <main  class="my-5">
+        <section>
+            <div class="d-flex mx-auto w-50 justify-content-centerlign-items-center">
+           <input id="ïnputfeild" class="form-control w-50" type="text">
+          <button onclick="handlesearch()" class="ms-2 mt-3 btn btn-success">load user</button>
+
+          <div id="audio-container" class="audio-container"></div>
+    </div>
+    </section>
+   
+    <section class="my-5 text-center">
+        <div id="grammercontain">
+<!-- <p class="font-bold"></p> -->
+<!-- <audio src=""></audio> -->
+        </div>
+    </section>
+</main>
+
+<section class="github">
+    <button onclick="loadGithubUsers()" id="github-btn" class="button btn-danger">
+      Load Github USers
+    </button>
+    <div id="user-cotnainer" class="user-cotnainer">
+
+    </div>
+  </section>
+   
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="js/api.js"></script>
+</body>
+</html>
