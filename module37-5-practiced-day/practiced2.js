@@ -37,3 +37,6 @@ const multiline = (a,b,c) => {
         return ttoal;
 }
 console.log( multiline(0,0,0));
+
+// git commit -m" module 37 -5 practice2"
+//  git push
