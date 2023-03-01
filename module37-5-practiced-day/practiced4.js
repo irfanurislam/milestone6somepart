@@ -15,7 +15,7 @@
 
 
 const loaduser =() =>{
-    fetch('https://jsonplaceholder.typicode.com/photos')
+    fetch(`https://jsonplaceholder.typicode.com/photos`)
     .then(res => res.json())
     .then(data => display(data.slice(0,5)));
 }
@@ -24,7 +24,7 @@ const display =(data) =>{
     console.log(data);
     const photocontain = document.getElementById('photo-contain');
     data.forEach(photos => {
-        console.log(photos.id);
+        console.log(photos);
         const div = document.createElement('div');
         
         div.classList.add('col');
@@ -35,7 +35,7 @@ const display =(data) =>{
                 <div class="card-body">
                   <h5 class="text-info card-title">title:${title} </h5>
                   <p class="text-danger card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer ${url}</p>
-                  <button onclick="loaduser(${id})" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#usersmodal" >load id</button>
+                  <button onclick="userdetails(${id})" class="btn btn-primary">load id</button>
                 </div>
                 </div>
 
@@ -52,32 +52,32 @@ const display =(data) =>{
 };
 
 const userdetails = (id) =>{
-  const url = `https://jsonplaceholder.typicode.com/${id}`;
+  const url = `https://jsonplaceholder.typicode.com/photos/${id}`;
   fetch(url)
   .then(res => res.json())
-  .then(data => usermodal(data));
+  .then(data => loaddisplay(data));
+}
+const loaddisplay = (data) =>{
+  console.log(data);
+  const detailscontain = document.getElementById('details-contain');
+const {thumbnailUrl,title,id} = data;
+ const div = document.createElement('div');
+ div.classList.add('col');
+ detailscontain.innerHTML ="";
+ div.innerHTML = `
+          <div class="card">
+                <img src="${thumbnailUrl}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="text-info card-title">title:${title} </h5>
+                  <p class="text-danger card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer ${id}</p>
+                </div>
+                </div>
+ 
+ `;
+detailscontain.appendChild(div);
 }
 
-const usermodal = (datas) =>{
-    console.log(datas);
-    
-    datas.forEach(user => {
-        const label = document.getElementById('labelmodal');
-        label.innerText = user.id; 
-        const modaluser = document.getElementById('modaluser');
-       modaluser.classList.add('modal-body');
-        modaluser.innerHTML = `
-       
-          >h3> id: ${user.id}</h3>
-        
-      
-        
-        
-        
-        `;
-        modaluser.appendChild(div);
-    })
-}
+
 
 
 
