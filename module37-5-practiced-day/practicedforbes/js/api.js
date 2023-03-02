@@ -2,9 +2,9 @@ console.log('hlw');
 
 
  const loadfile = async () =>{
-    const url = '';
+    //const url = 'json/data.json';
      try {    
-    const res = await fetch(url);
+    const res = await fetch('./js/json/data.json');
      const data = await res.json();
      console.log(data);
     }
@@ -12,8 +12,7 @@ console.log('hlw');
         console.log(error);
      }
 
-    
-    
+      
 }
 loadfile();
 console.log('hlw');
